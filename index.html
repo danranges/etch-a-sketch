@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>A modern twist on Etch-a-Sketch</title>
+  </head>
+  <body>
+    <header>Etch-a-Sketch</header>
+    <div class="controls">
+      <button type="button" id="normal">Normal</button>
+      <button type="button" id="additive">Additive</button>
+      <div class="slide-container">
+        <input
+          type="range"
+          min="10"
+          max="100"
+          value="20"
+          step="5"
+          class="slider"
+          id="grid-size"
+        />
+      </div>
+      <button type="button" id="reset">Reset</button>
+    </div>
+    <div class="sketch-container" id="sketch-container"></div>
+  </body>
+  <script type="text/javascript" src="scripts.js"></script>
+</html>
