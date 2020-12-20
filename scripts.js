@@ -9,9 +9,9 @@ let drawMode = 'normal'
 function createGridElements(){
     let i = 0
     while (i<(slider.value**2)) {
-        let newSquare = document.createElement('div');
-        newSquare.classList.add('grid-box');
-        sketchContainer.appendChild(newSquare);
+        let newSquare = document.createElement('div')
+        newSquare.classList.add('grid-box')
+        sketchContainer.appendChild(newSquare)
         ++i;
     }
 }
@@ -26,24 +26,25 @@ function updateGridContainer() {
 function addMouseoverEvent() {
     let gridBoxes = document.getElementsByClassName('grid-box')
     for (i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].addEventListener('mouseover', drawPixel);
+        gridBoxes[i].addEventListener('mouseover', drawPixel)
     }
 }
 
 function drawPixel() {
     console.log(drawMode)
     if(drawMode === 'normal') {
-        this.style.backgroundColor = 'rgba(0, 0, 0, 0.8';
+        this.style.backgroundColor = 'rgba(0, 0, 0, .9)'
     } else if (drawMode === 'additive') {
+        let currentOpacity = Number(this.style.backgroundColor.slice(-4, -1))
+        if (currentOpacity <= .8) {
+            this.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.15})`
+        }
     }
 }
 
 updateGridContainer()
 createGridElements()
 addMouseoverEvent()
-
-
-
 
 slider.addEventListener('input', () => {
     sketchContainer.innerHTML = ''
@@ -59,11 +60,14 @@ reset.addEventListener('click', () => {
     }
 })
 
-normalMode.addEventListener('click', () => {
-    drawMode = 'normal'
+normalMode.addEventListener('click', () => {   
+    drawMode = 'normal';
+    additiveMode.style.fontWeight = '100'
+    normalMode.style.fontWeight = '900'
 })
 
 additiveMode.addEventListener('click', () => {
-    console.log(drawMode)
-    drawMode = 'additive'
+    drawMode = 'additive';
+    additiveMode.style.fontWeight = '900'
+    normalMode.style.fontWeight = '100'
 })

@@ -7,22 +7,24 @@
     <title>A modern twist on Etch-a-Sketch</title>
   </head>
   <body>
-    <header>Etch-a-Sketch</header>
+    <header>
+      <h1>Etch-a-Sketch</h1>
+    </header>
     <div class="controls">
-      <button type="button" id="normal">Normal</button>
-      <button type="button" id="additive">Additive</button>
+      <button type="button" class="mode" id="normal">Normal</button>
+      <button type="button" class="mode" id="additive">Additive</button>
       <div class="slide-container">
         <input
           type="range"
           min="10"
-          max="100"
+          max="30"
           value="20"
           step="5"
           class="slider"
           id="grid-size"
         />
       </div>
-      <button type="button" id="reset">Reset</button>
+      <button type="button" id="reset">Clear</button>
     </div>
     <div class="sketch-container" id="sketch-container"></div>
   </body>
