@@ -58,3 +58,20 @@ button:active {
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
 }
+
+footer {
+  display: flex;
+  align-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+a.footer {
+  align-self: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#gh-logo {
+  width: 24px;
+  padding: 0px 5px;
+}
